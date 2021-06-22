@@ -3,6 +3,8 @@
 
 const DEFAULT_GRID_SIZE = 16;
 
+const FFFFFF_BASE_10 = 16777215;
+
 
 const etchASketch = document.getElementById('etch-a-sketch');
 
@@ -30,6 +32,8 @@ function createGrid(size) {
         const etchASketchTile = document.createElement('div');
         etchASketchTile.classList.add("tile");
         etchASketchTile.id = "tile-" + i;
+        etchASketchTile.style.backgroundColor = "white";
+        etchASketchTile.style.opacity = 1;
         etchASketch.appendChild(etchASketchTile);
 
         initializeTiles();
@@ -44,8 +48,19 @@ function initializeTiles() {
 }
 
 
+function randomColor() {
+    let randomColorBase10 = Math.floor((Math.random() * FFFFFF_BASE_10));
+    return randomColorBase10.toString(16);
+}
+
+
 function changeColor(e) {
-    this.style.backgroundColor = "black";
+    if(this.style.backgroundColor == 'white') {
+        this.style.backgroundColor = `#${randomColor()}`;
+    }
+    else {
+        this.style.opacity -= 0.1;
+    }    
 }
 
 
