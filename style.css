@@ -1,0 +1,42 @@
+body {
+    font-family: sans-serif;
+    display: block;
+    position: relative;
+    font-size: 1.25em;
+    justify-content: center;
+    background-color: aliceblue;
+}
+
+
+
+#etch-a-sketch {
+    display: grid;
+    grid-template-columns: repeat(16, auto);
+    width: 24em;
+    height: 24em;
+    margin: auto;
+    background-color: white;
+    border: 0.5em solid gray;
+}
+
+#title {
+    text-align: center;
+    margin: 0.75em auto;
+}
+
+#reset {
+    border: none;
+    background-color: gray;
+    font-size: 1em;
+}
+
+#reset:hover {
+    background-color: black;
+    color: white;
+}
+
+
+
+.reset {
+    text-align: center;
+}
